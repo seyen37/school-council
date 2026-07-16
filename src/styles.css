@@ -639,10 +639,30 @@ button:focus-visible {
   width: min(560px, 100%);
   max-height: 86dvh;
   overflow-y: auto;
-  background: linear-gradient(180deg, #2f1d12, #211308);
+  background: linear-gradient(180deg, #223730, #16231f);
   border: 1.5px solid var(--gold-dim);
   border-radius: 12px;
   padding: 22px 24px;
+}
+.modal.wide {
+  width: min(780px, 100%);
+}
+.guide-paper {
+  background: var(--paper);
+  color: var(--paper-ink);
+  border-radius: 8px;
+  padding: 22px 26px;
+}
+.guide-paper a {
+  color: var(--vermilion-deep);
+  text-decoration: underline;
+}
+.guide-paper ol {
+  padding-left: 24px;
+  margin: 6px 0;
+}
+.guide-paper h1:first-child {
+  margin-top: 0;
 }
 .modal-head {
   display: flex;

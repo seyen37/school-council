@@ -74,6 +74,8 @@ export const UI = {
   kinderNo: '未附設幼兒園',
   settings: '金鑰',
   muster: '點名',
+  guideTitle: '使用說明',
+  guideBtn: '使用說明',
   hallSub: (chair, meeting) => `${chair}主持・${meeting}`,
   emptyA: '會議室一片安靜。',
   emptyB: '請主席於下方提出議題：一個您正在猶豫的決定、一件想推動的事，與會人員即刻發言討論。',

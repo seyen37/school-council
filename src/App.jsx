@@ -7,7 +7,7 @@ import {
 } from './councils'
 import { streamText, DEFAULT_MODELS } from './llm'
 import { Plaque, EdictCard, SpeechCard, FengjianCard, RecordCard, ErrorCard } from './components/ui'
-import { SettingsPanel, MusterPanel } from './components/panels'
+import { SettingsPanel, MusterPanel, GuidePanel } from './components/panels'
 
 const load = (k, fb) => {
   try {
@@ -62,6 +62,7 @@ export default function App() {
 
   const [showSettings, setShowSettings] = useState(false)
   const [showMuster, setShowMuster] = useState(false)
+  const [showGuide, setShowGuide] = useState(false)
   const [feed, setFeed] = useState([])
   const [running, setRunning] = useState(false)
   const [speaker, setSpeaker] = useState(null)
@@ -278,6 +279,7 @@ export default function App() {
           <p className="gate-sub">{t.gateSub}</p>
 
           <div className="cfg-bar">
+            <button className="btn ghost small" onClick={() => setShowGuide(true)}>{t.guideBtn}</button>
             <span className="cfg-label">{t.cfgTitle}</span>
             <div className="freq-pills">
               <button className="freq-pill on"
@@ -305,6 +307,7 @@ export default function App() {
           </div>
           <p className="gate-foot">{t.gateFoot}</p>
         </motion.div>
+        {showGuide && <GuidePanel onClose={() => setShowGuide(false)} />}
       </div>
     )
   }

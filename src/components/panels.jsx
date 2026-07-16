@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { marked } from 'marked'
 import { UI, EXT_FREQ, poolFor, extFor, chairOf, STYLE_LIST } from '../councils'
 import { PROVIDERS } from '../llm'
+import { GUIDE_MD } from '../guide'
 
-function Modal({ title, children, onClose, closeLabel }) {
+function Modal({ title, children, onClose, closeLabel, wide }) {
   return (
     <AnimatePresence>
       <motion.div
@@ -14,7 +16,7 @@ function Modal({ title, children, onClose, closeLabel }) {
         onClick={onClose}
       >
         <motion.div
-          className="modal"
+          className={`modal ${wide ? 'wide' : ''}`}
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           onClick={(e) => e.stopPropagation()}
@@ -29,6 +31,18 @@ function Modal({ title, children, onClose, closeLabel }) {
         </motion.div>
       </motion.div>
     </AnimatePresence>
+  )
+}
+
+// ─── 使用說明 ───────────────────────────────────────────────
+export function GuidePanel({ onClose }) {
+  return (
+    <Modal title={UI.guideTitle} onClose={onClose} closeLabel={UI.close} wide>
+      <div
+        className="guide-paper record-body"
+        dangerouslySetInnerHTML={{ __html: marked.parse(GUIDE_MD) }}
+      />
+    </Modal>
   )
 }
 
