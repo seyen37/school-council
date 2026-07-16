@@ -2,6 +2,8 @@
 
 **一所國小、三方勢力。你是主席，滿場 AI 與會者輪番發言、針鋒相對，會後自動留下一份可以帶走的會議紀錄。**
 
+🏫 **線上入場**：[school-council-one.vercel.app](https://school-council-one.vercel.app/)（自備 API key 即可開會）
+
 改寫自 [Joanna8521/emperor（百官朝議）](https://github.com/Joanna8521/emperor)（MIT License），把明代朝堂換成台灣國民小學的議事現場。
 
 ## 四個入口
